@@ -17,9 +17,23 @@ The machine I have is a Dell T7500 with an Nvidia Quadro 4000 GPU.  The extra it
 \section{Preparation}
 \label{prep}
 I followed the excellent article at the following URL:
-\url{http://lifehacker.com/5841604/the-always-up+to+date-guide-to-building-a-hackintosh}.  I followed this guide, until the end of Step 2.
+\url{http://lifehacker.com/5841604/the-always-up+to+date-guide-to-building-a-hackintosh}.
+I followed this guide, until the end of Step 2.
 
-\section{Specific Hardware}
+\section{Machine Specifications}
+\begin{enumerate}
+\item One 3.59 GHz Quad-Core Intel Xeon CPU
+\item 30 GB 1333 MHz DDR3 RAM
+\item NVIDIA Quadro 4000 2048 MB (non Mac card)
+\item Star Tech 2 Port SATA 6 Gb/s PCI Express SATA Controller Card
+  with the following drives connected to it:
+\begin{enumerate}
+\item Intel 520 240 GB SSD
+\item Intel 520 480 GB SSD
+\end{enumerate}
+\end{enumerate}
+
+\section{Specific Hardware Issues}
 The specific hardware on the T7500 that did not work out of the box are given below, and I'm going to address how I got them working in this article.
 \begin{enumerate}
 \item Nvidia Quadro 4000
@@ -131,6 +145,15 @@ I added an extra line to the dictionary containing the Device IDs:
                         </array>
 \end{verbatim}
 The entry with {\bf pci14e4,1681} is what I added.  After this, ``touch'' the Extensions directory as usual, reboot and Ethernet worked flawlessly.  Once again, many thanks to the author of the driver.
+
+\section{SONNET Gigabit Ethernet PCI Express Card}
+With the on-board Ethernet card and the driver described above, I was
+getting occasional network freezes.  So after some research, I decided
+to buy the SONNET card.  Mountain Lion natively recognises the card,
+and I have had no problems so far with this card, and I would
+therefore recommend it to other Hackintosh builders, even though it's
+a bit expensive.
+
 
 \section{Enabling TRIM on the SSD Drive}
 
